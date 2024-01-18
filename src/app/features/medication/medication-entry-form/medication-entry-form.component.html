@@ -1,0 +1,9 @@
+<p>medication-entry-form works!</p>
+<div class="card flex flex-column md:flex-row gap-3">
+    <div class="p-inputgroup" [formGroup]="medicationEntryForm" (ngSubmit)="onSubmit()">
+        <span class="p-inputgroup-medication-entry">
+            <i class="pi pi-home"></i>
+        </span>
+        <input type="text" pInputText placeholder="Name">
+    </div>
+</div>

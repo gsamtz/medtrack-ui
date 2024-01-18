@@ -1,0 +1,25 @@
+<p>medication-list works!</p>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DOSAGE</th>
+                <th>UNIT</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="medications.length; else noMedications">
+            <tr *ngFor="let med of medications">
+                <th>{{ med.id }}</th>
+                <th>{{ med.name }}</th>
+                <th>{{ med.dosage }}</th>
+                <th>{{ med.unit }}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noMedications>
+    <p>No medication(s) available.</p>
+</ng-template>
