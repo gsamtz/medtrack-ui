@@ -18,5 +18,6 @@ export class MedicationEntryFormComponent {
 
   onSubmit() {
     console.log(this.medicationEntryForm.value);
+    this.medicationEntryForm.reset();
   }
 }
