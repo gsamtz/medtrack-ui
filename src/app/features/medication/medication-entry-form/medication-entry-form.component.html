@@ -1,9 +1,24 @@
 <p>medication-entry-form works!</p>
-<div class="card flex flex-column md:flex-row gap-3">
-    <div class="p-inputgroup" [formGroup]="medicationEntryForm" (ngSubmit)="onSubmit()">
-        <span class="p-inputgroup-medication-entry">
-            <i class="pi pi-home"></i>
-        </span>
-        <input type="text" pInputText placeholder="Name">
+<form [formGroup]="medicationEntryForm" (ngSubmit)="onSubmit()">
+    <div class="card flex flex-column md:flex-row gap-3">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-home"></i>
+            </span>
+            <input pInputText placeholder="Name" formControlName="name">
+        </div>
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-user"></i>
+            </span>
+            <input pInputText placeholder="Dosage" formControlName="dosage"/>
+        </div>
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-user"></i>
+            </span>
+            <input pInputText placeholder="Unit" formControlName="unit"/>
+        </div>
     </div>
-</div>
+    <p-button type="submit" [disabled]="!medicationEntryForm.valid" label="Submit" icon="pi pi-check" iconPos="right" size="small"></p-button>
+</form>
