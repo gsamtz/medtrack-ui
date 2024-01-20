@@ -1,24 +1,74 @@
-<p>medication-entry-form works!</p>
-<form [formGroup]="medicationEntryForm" (ngSubmit)="onSubmit()">
-    <div class="card flex flex-column md:flex-row gap-3">
-        <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-                <i class="pi pi-home"></i>
+<div
+  class="justify-content-center"
+  [style]="{ width: '420px', height: '100%', 'min-height': '100vh' }"
+>
+  <form [formGroup]="medicationEntryForm" (ngSubmit)="onSubmit()">
+    <div class="card flex justify-content-center">
+      <p-card header="Medication Entry" [style]="{ width: '360px' }">
+        <div class="card flex flex-column md:flex-row gap-3">
+          <div class="p-inputgroup">
+            <span
+              class="p-inputgroup-addon"
+              [style]="{ 'margin-bottom': '.5em' }"
+            >
+              <i class="pi pi-user"></i>
             </span>
-            <input pInputText placeholder="Name" formControlName="name">
-        </div>
-        <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-                <i class="pi pi-user"></i>
+            <input
+              id="medicationNameInput"
+              pInputText
+              placeholder="Name"
+              formControlName="name"
+              [style]="{ 'margin-bottom': '.5em' }"
+            />
+          </div>
+          <div class="p-inputgroup">
+            <span
+              class="p-inputgroup-addon"
+              [style]="{ 'margin-bottom': '.5em' }"
+            >
+              <i class="pi pi-eye"></i>
             </span>
-            <input pInputText placeholder="Dosage" formControlName="dosage"/>
-        </div>
-        <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-                <i class="pi pi-user"></i>
+            <input
+              pInputText
+              placeholder="Dosage"
+              formControlName="dosage"
+              [style]="{ 'margin-bottom': '.5em' }"
+            />
+          </div>
+          <div class="p-inputgroup">
+            <span
+              class="p-inputgroup-addon"
+              [style]="{ 'margin-bottom': '.5em' }"
+            >
+              <i class="pi pi-info"></i>
             </span>
-            <input pInputText placeholder="Unit" formControlName="unit"/>
+            <input
+              pInputText
+              placeholder="Unit"
+              formControlName="unit"
+              [style]="{ 'margin-bottom': '.5em' }"
+            />
+          </div>
         </div>
+        <ng-template pTemplate="footer">
+          <p-button
+            type="submit"
+            [disabled]="!medicationEntryForm.valid"
+            label="Save"
+            icon="pi pi-check"
+            size="small"
+          ></p-button>
+          <p-button
+            type="reset"
+            (onClick)="onFormReset()"
+            label="Reset"
+            icon="pi pi-undo"
+            styleClass="p-button-secondary"
+            [style]="{ 'margin-left': '.5em' }"
+            size="small"
+          ></p-button>
+        </ng-template>
+      </p-card>
     </div>
-    <p-button type="submit" [disabled]="!medicationEntryForm.valid" label="Submit" icon="pi pi-check" iconPos="right" size="small"></p-button>
-</form>
+  </form>
+</div>
