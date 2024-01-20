@@ -5,6 +5,7 @@ import { MedicationEntryFormComponent } from './medication-entry-form/medication
 import { MedicationListComponent } from './medication-list/medication-list.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ButtonModule } from 'primeng/button';
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    CardModule
   ]
 })
 export class MedicationModule { }
